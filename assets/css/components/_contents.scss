@@ -1,0 +1,344 @@
+.mc-main-content {
+  padding-top: 40px;
+  @include mobile {
+    padding-top: unset;
+  }
+}
+
+.home-section {
+  &__header {
+    margin-bottom: 18px;
+    @include tablet {
+      margin-bottom: 13px;
+    }
+  }
+
+  &__content {
+    margin-top: 40px;
+    @include small-mobile {
+      margin-top: 30px;
+    }
+  }
+
+  &__aside {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.super-banner {
+  box-shadow: 0 8px 16px 0 rgba(1, 40, 94, 0.2);
+  margin-top: 0;
+  background-color: $nav-text-color;
+
+  @include mobile {
+    margin: 0 -1rem;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 30px);
+    transform: translateX(15px);
+    height: 100%;
+    z-index: -1;
+    opacity: 1;
+    box-shadow: 0 8px 16px 0 rgba(0, 40, 94, 0.3);
+    transition: opacity 0.2s ease-in-out;
+  }
+
+  &:hover {
+    .super-banner__heading {
+      text-decoration: underline;
+      text-decoration-color: $bg-color;
+    }
+    &::before {
+      opacity: 0;
+    }
+  }
+
+  &__link {
+    display: flex;
+    min-height: 365px;
+
+    @include mobile {
+      flex-direction: column-reverse;
+      min-height: unset;
+    }
+
+    @include tablet {
+      min-height: 267px;
+    }
+  }
+
+  &__main {
+    padding: 22px 20px 24px;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    width: 331px;
+
+    @include tablet {
+      width: 245px;
+      padding: 22px 16px;
+    }
+    @include mobile {
+      padding: 12px 16px 18px;
+      width: 100%;
+    }
+  }
+
+  &__pre-heading {
+    font-style: 16px;
+    color: $bg-color;
+    margin-bottom: 8px;
+    @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__heading {
+    font-family: Gotham, sans-serif;
+    font-size: 34px;
+    line-height: 1.08;
+    font-weight: bold;
+    line-height: break-word;
+    color: #fff;
+    @include mobile {
+      font-size: 24px;
+    }
+  }
+
+  &__aside {
+    width: 100%;
+  }
+
+  &__wrapper {
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+
+    @include mobile {
+      padding-top: 56.25%;
+    }
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.featured-news-list {
+  &__item {
+    margin-bottom: 24px;
+    display: flex;
+  }
+}
+
+.news-card {
+  width: 100%;
+
+  @include small-mobile {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dedede;
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+
+    @include small-mobile {
+      flex-direction: row;
+    }
+  }
+
+  &__figure {
+    margin-bottom: 11px;
+
+    @include small-mobile {
+      width: 102px;
+      flex-shrink: 0;
+      margin-right: 12px;
+    }
+  }
+
+  &__figure-content {
+    position: relative;
+    display: block;
+    height: 0;
+    overflow: hidden;
+    padding-top: 56.25%;
+  }
+
+  &__wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+  }
+
+  &__title {
+    letter-spacing: 0.3px;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+  &__heading {
+    font-size: 18px;
+    margin-bottom: 8px;
+    line-height: 1.13;
+    color: $title-color;
+    font-weight: 700;
+    @include textHandle;
+    @include small-mobile {
+      font-size: 16px;
+    }
+  }
+
+  &__category {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #696b6d;
+    font-weight: 300;
+    @include textHandle;
+    @include small-mobile {
+      font-size: 12px;
+    }
+  }
+}
+
+.mc-fixture {
+  border-top: 3px solid #72e9ff !important;
+  width: 100%;
+  border: 1px solid #dedede;
+  padding: 21px 17px 17px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__heading {
+      width: 50%;
+      color: $text-color;
+      font-size: 13px;
+      text-transform: uppercase;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    &__link {
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      color: $nav-text-color;
+      font-weight: 700;
+    }
+
+    &__text {
+      text-decoration: underline;
+    }
+
+    &__icon {
+      padding-left: 5px;
+    }
+  }
+
+  &__info {
+    text-align: center;
+    margin-top: 15px;
+
+    &__date {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    &__league {
+      margin-top: 3px;
+      font-size: 13px;
+    }
+  }
+
+  &__match {
+    margin-top: 14px;
+    display: flex;
+    justify-content: space-around;
+
+    &__first-team {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 1 0;
+    }
+
+    &__logo {
+      max-width: 52px;
+      min-height: 52px;
+    }
+
+    &__team {
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    &__time {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1 0;
+      background-color: #ededed;
+      height: 40px;
+    }
+
+    &__time-start {
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    &__time-locate {
+      font-size: 12px;
+      color: $text-color;
+      margin-top: -1px;
+      font-weight: 700;
+    }
+  }
+
+  &__footer {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .mc-button--secondary {
+      @include button;
+      color: $nav-text-color;
+      background-color: #fff;
+      border: 1px solid $nav-text-color;
+      margin-right: 8px;
+    }
+
+    .mc-button--yellow {
+      @include button;
+      color: $nav-text-color;
+      background-color: #f4bc46;
+      border: 1px solid #f4bc46;
+    }
+  }
+}

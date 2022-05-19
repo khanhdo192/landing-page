@@ -17,6 +17,7 @@
   </head>
   <body>
     <div class="mc-page">
+      <!-- Start header -->
       <header class="mc-header mc-header--sticky">
         <div class="mc-header__wrapper">
           <div class="mc-header__container">
@@ -147,7 +148,7 @@
                 <li class="mc-header-secondary-nav__item mc-header-secondary-nav__log-in"></li>
               </ul>
               <div class="mc-header-secondary-nav__mobile-nav">
-                <button class="mc-header-open-menu">
+                <button id="mcOpenMenu" class="mc-header-open-menu">
                   <i class="mc-header-open-menu__icon fa-regular fas fa-bars"></i>
                 </button>
               </div>
@@ -155,11 +156,336 @@
           </div>
         </div>
       </header>
-      <nav class="mc-mobile-menu__nav"></nav>
-      <main></main>
+      <!-- End header -->
+      <!-- Start mobile menu -->
+      <div class="mc-mobile-menu">
+        <header class="mc-mobile-menu__header">
+          <h3 class="mc-mobile-menu__heading">
+            <a class="mc-mobile-menu__link" href="#">Mancity.com</a>
+          </h3>
+          <button id="mcCloseMenu" class="mc-mobile-menu__close">
+            <i class="mc-mobile-menu__close-icon fa-solid fa-circle-xmark"></i>
+          </button>
+        </header>
+        <nav class="mc-mobile-menu__nav">
+          <ul class="mc-mobile-menu__list">
+            <li class="mc-mobile-menu__item">
+              <a href="#" class="mc-mobile-menu__link-item">
+                <span class="mc-mobile-menu__text">News</span>
+              </a>
+            </li>
+            <li class="mc-mobile-menu__item">
+              <a href="#" class="mc-mobile-menu__link-item">
+                <span class="mc-mobile-menu__text">Video</span>
+              </a>
+            </li>
+            <li class="mc-mobile-menu__item">
+              <a href="#" class="mc-mobile-menu__link-item">
+                <span class="mc-mobile-menu__text">City+</span>
+              </a>
+            </li>
+            <li class="mc-mobile-menu__item">
+              <a href="#" class="mc-mobile-menu__link-item">
+                <span class="mc-mobile-menu__text">Fixtures</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- End mobile menu -->
+      <!-- Start main content -->
+      <main class="mc-main-content">
+        <div class="container">
+          <section class="home-section">
+            <div class="home-section__header row">
+              <div class="col-lg-12">
+                <article class="super-banner">
+                  <a class="super-banner__link" href="#">
+                    <div class="super-banner__main">
+                      <p class="super-banner__pre-heading">Club news</p>
+                      <h2 class="super-banner__heading">CITY'S 2022/23 PUMA HOME KIT LAUNCHES!</h2>
+                    </div>
+                    <div class="super-banner__aside">
+                      <div class="super-banner__wrapper">
+                        <img class="super-banner__image" src="./assets/images/kit5.webp" alt="" />
+                      </div>
+                    </div>
+                  </a>
+                </article>
+              </div>
+            </div>
+            <div class="home-section__content row">
+              <div class="col-12 col-lg-8">
+                <ul class="featured-news-list row">
+                  <li class="col-12 col-md-6 col-sm-6 featured-news-list__item">
+                    <div class="news-card">
+                      <a href="" class="news-card__container">
+                        <figure class="news-card__figure">
+                          <div class="news-card__figure-content">
+                            <img
+                              src="./assets/images/potm-stage-2.webp"
+                              alt=""
+                              class="news-card__wrapper"
+                            />
+                          </div>
+                        </figure>
+                        <span class="news-card__title">
+                          <h3 class="news-card__heading">
+                            Etihad Player of the Season: Final shortlist revealed
+                          </h3>
+                          <p class="news-card__category">MEN'S TEAM</p>
+                        </span>
+                      </a>
+                    </div>
+                  </li>
+                  <li class="col-12 col-md-6 col-sm-6 featured-news-list__item">
+                    <div class="news-card">
+                      <a href="" class="news-card__container">
+                        <figure class="news-card__figure">
+                          <div class="news-card__figure-content">
+                            <img
+                              src="./assets/images/potm-stage-2.webp"
+                              alt=""
+                              class="news-card__wrapper"
+                            />
+                          </div>
+                        </figure>
+                        <span class="news-card__title">
+                          <h3 class="news-card__heading">
+                            Etihad Player of the Season: Final shortlist revealed
+                          </h3>
+                          <p class="news-card__category">MEN'S TEAM</p>
+                        </span>
+                      </a>
+                    </div>
+                  </li>
+                  <li class="col-12 col-md-3 col-sm-6 featured-news-list__item">
+                    <div class="news-card">
+                      <a href="" class="news-card__container">
+                        <figure class="news-card__figure">
+                          <div class="news-card__figure-content">
+                            <img
+                              src="./assets/images/potm-stage-2.webp"
+                              alt=""
+                              class="news-card__wrapper"
+                            />
+                          </div>
+                        </figure>
+                        <span class="news-card__title">
+                          <h3 class="news-card__heading">
+                            Etihad Player of the Season: Final shortlist revealed
+                          </h3>
+                          <p class="news-card__category">MEN'S TEAM</p>
+                        </span>
+                      </a>
+                    </div>
+                  </li>
+                  <li class="col-12 col-md-3 col-sm-6 featured-news-list__item">
+                    <div class="news-card">
+                      <a href="" class="news-card__container">
+                        <figure class="news-card__figure">
+                          <div class="news-card__figure-content">
+                            <img
+                              src="./assets/images/potm-stage-2.webp"
+                              alt=""
+                              class="news-card__wrapper"
+                            />
+                          </div>
+                        </figure>
+                        <span class="news-card__title">
+                          <h3 class="news-card__heading">
+                            Etihad Player of the Season: Final shortlist revealed
+                          </h3>
+                          <p class="news-card__category">MEN'S TEAM</p>
+                        </span>
+                      </a>
+                    </div>
+                  </li>
+                  <li class="col-12 col-md-3 col-sm-6 featured-news-list__item">
+                    <div class="news-card">
+                      <a href="" class="news-card__container">
+                        <figure class="news-card__figure">
+                          <div class="news-card__figure-content">
+                            <img
+                              src="./assets/images/potm-stage-2.webp"
+                              alt=""
+                              class="news-card__wrapper"
+                            />
+                          </div>
+                        </figure>
+                        <span class="news-card__title">
+                          <h3 class="news-card__heading">
+                            Etihad Player of the Season: Final shortlist revealed
+                          </h3>
+                          <p class="news-card__category">MEN'S TEAM</p>
+                        </span>
+                      </a>
+                    </div>
+                  </li>
+                  <li class="col-12 col-md-3 col-sm-6 featured-news-list__item">
+                    <div class="news-card">
+                      <a href="" class="news-card__container">
+                        <figure class="news-card__figure">
+                          <div class="news-card__figure-content">
+                            <img
+                              src="./assets/images/potm-stage-2.webp"
+                              alt=""
+                              class="news-card__wrapper"
+                            />
+                          </div>
+                        </figure>
+                        <span class="news-card__title">
+                          <h3 class="news-card__heading">
+                            Etihad Player of the Season: Final shortlist revealed
+                          </h3>
+                          <p class="news-card__category">MEN'S TEAM</p>
+                        </span>
+                      </a>
+                    </div>
+                  </li>
+                  <li class="col-12 col-md-3 col-sm-6 featured-news-list__item">
+                    <div class="news-card">
+                      <a href="" class="news-card__container">
+                        <figure class="news-card__figure">
+                          <div class="news-card__figure-content">
+                            <img
+                              src="./assets/images/potm-stage-2.webp"
+                              alt=""
+                              class="news-card__wrapper"
+                            />
+                          </div>
+                        </figure>
+                        <span class="news-card__title">
+                          <h3 class="news-card__heading">
+                            Etihad Player of the Season: Final shortlist revealed
+                          </h3>
+                          <p class="news-card__category">MEN'S TEAM</p>
+                        </span>
+                      </a>
+                    </div>
+                  </li>
+                  <li class="col-12 col-md-3 col-sm-6 featured-news-list__item">
+                    <div class="news-card">
+                      <a href="" class="news-card__container">
+                        <figure class="news-card__figure">
+                          <div class="news-card__figure-content">
+                            <img
+                              src="./assets/images/potm-stage-2.webp"
+                              alt=""
+                              class="news-card__wrapper"
+                            />
+                          </div>
+                        </figure>
+                        <span class="news-card__title">
+                          <h3 class="news-card__heading">
+                            Etihad Player of the Season: Final shortlist revealed
+                          </h3>
+                          <p class="news-card__category">MEN'S TEAM</p>
+                        </span>
+                      </a>
+                    </div>
+                  </li>
+                  <li class="col-12 col-md-3 col-sm-6 featured-news-list__item">
+                    <div class="news-card">
+                      <a href="" class="news-card__container">
+                        <figure class="news-card__figure">
+                          <div class="news-card__figure-content">
+                            <img
+                              src="./assets/images/potm-stage-2.webp"
+                              alt=""
+                              class="news-card__wrapper"
+                            />
+                          </div>
+                        </figure>
+                        <span class="news-card__title">
+                          <h3 class="news-card__heading">
+                            Etihad Player of the Season: Final shortlist revealed
+                          </h3>
+                          <p class="news-card__category">MEN'S TEAM</p>
+                        </span>
+                      </a>
+                    </div>
+                  </li>
+                  <li class="col-12 col-md-3 col-sm-6 featured-news-list__item">
+                    <div class="news-card">
+                      <a href="" class="news-card__container">
+                        <figure class="news-card__figure">
+                          <div class="news-card__figure-content">
+                            <img
+                              src="./assets/images/potm-stage-2.webp"
+                              alt=""
+                              class="news-card__wrapper"
+                            />
+                          </div>
+                        </figure>
+                        <span class="news-card__title">
+                          <h3 class="news-card__heading">
+                            Etihad Player of the Season: Final shortlist revealed
+                          </h3>
+                          <p class="news-card__category">MEN'S TEAM</p>
+                        </span>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <aside class="col-12 col-lg-4">
+                <div class="home-section__aside">
+                  <div class="col-12 col-lg-12 col-md-6">
+                    <section class="mc-fixture">
+                      <div class="mc-fixture__header">
+                        <h3 class="mc-fixture__header__heading">Next Fixture</h3>
+                        <a class="mc-fixture__header__link" href="#">
+                          <span class="mc-fixture__header__text">All fixtures</span>
+                          <i class="mc-fixture__header__icon fa-solid fa-arrow-right-long"></i>
+                        </a>
+                      </div>
+                      <div class="mc-fixture__info">
+                        <time class="mc-fixture__info__date">Sun 22 May</time>
+                        <p class="mc-fixture__info__league">Premier League</p>
+                      </div>
+                      <div class="mc-fixture__match">
+                        <div class="mc-fixture__match__first-team">
+                          <img
+                            class="mc-fixture__match__logo"
+                            src="./assets/images/manchester_city_fc_badge.webp"
+                            alt=""
+                          />
+                          <p class="mc-fixture__match__team">Man City</p>
+                        </div>
+                        <div class="mc-fixture__match__time">
+                          <time class="mc-fixture__match__time-start">16:00</time>
+                          <p class="mc-fixture__match__time-locate">BTS</p>
+                        </div>
+                        <div class="mc-fixture__match__first-team">
+                          <img
+                            class="mc-fixture__match__logo"
+                            src="./assets/images/aston.webp"
+                            alt=""
+                          />
+                          <p class="mc-fixture__match__team">A Villa</p>
+                        </div>
+                      </div>
+                      <div class="mc-fixture__footer">
+                        <a class="mc-button--secondary" href="#">Preview</a>
+                        <a class="mc-button--yellow" href="#">Buy Tickets</a>
+                      </div>
+                    </section>
+                  </div>
+                  <div class="col-12 col-lg-12 col-md-6"></div>
+                </div>
+              </aside>
+            </div>
+          </section>
+        </div>
+      </main>
+      <!-- End main content -->
+      <!-- Start footer -->
       <footer></footer>
+      <!-- End footer -->
     </div>
 
+    <!-- Bootstrap & Jquery script -->
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -175,5 +501,8 @@
       integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Index script -->
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
