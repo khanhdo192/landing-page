@@ -133,19 +133,9 @@
     font-family: Gotham, sans-serif;
     letter-spacing: 0.4px;
     font-size: 20px;
-    text-transform: uppercase;
-    text-decoration: none;
-    text-decoration-color: transparent;
     font-weight: bold;
-    color: $nav-text-color;
-    transition: text-decoration-color 0.1s ease-in-out;
-
-    &:hover {
-      text-decoration: underline;
-      text-decoration-style: solid;
-      text-decoration-color: $nav-text-color;
-      will-change: opacity;
-    }
+    text-transform: uppercase;
+    @include hoverLink($nav-text-color);
   }
 
   &__fly-out {
@@ -153,12 +143,22 @@
     cursor: pointer;
     padding-bottom: 16px;
     margin-bottom: -16px;
-    overflow: hidden;
 
     @include tablet {
       padding-bottom: unset;
       margin-bottom: unset;
       padding-right: 20px;
+    }
+
+    &:hover > .mc-header-fly-out__drop-down {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    &:hover > .mc-header-fly-out__trigger > .mc-header-fly-out__chevron {
+      @include tablet {
+        transform: rotate(-180deg);
+      }
     }
   }
 }
@@ -178,6 +178,7 @@
     left: calc(50% - 8px);
     margin-top: -10px;
     font-size: 13px;
+    transition: transform 0.5s ease-out;
 
     @include tablet {
       top: calc(50% + 4px);
@@ -187,6 +188,7 @@
 
   &__drop-down {
     visibility: hidden;
+    opacity: 0;
     position: absolute;
     top: calc(100% - 4px);
     left: calc(50% - 100px);
@@ -197,6 +199,7 @@
     cursor: auto;
     z-index: 1;
     padding: 24px 0;
+    transition: opacity 0.3s linear;
   }
 
   &__sub-list {
@@ -317,6 +320,7 @@
 .mc-header-open-menu {
   background: transparent;
   border: none;
+  cursor: pointer;
 
   &:focus {
     outline: none;
@@ -325,5 +329,9 @@
   &__icon {
     color: $nav-text-color;
     font-size: 24px;
+
+    &:hover {
+      color: #fff;
+    }
   }
 }

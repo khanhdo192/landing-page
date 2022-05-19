@@ -1,3 +1,9 @@
+@mixin small-mobile {
+  @media only screen and (max-width: 575.5px) {
+    @content;
+  }
+}
+
 @mixin mobile {
   @media only screen and (max-width: $mobile-width) {
     @content;
@@ -8,4 +14,38 @@
   @media only screen and (max-width: $tablet-width) {
     @content;
   }
+}
+
+@mixin hoverLink($color) {
+  color: $color;
+  text-decoration: none;
+
+  &:hover {
+    color: $color;
+    text-decoration: underline;
+    text-decoration-color: $color;
+  }
+}
+
+@mixin textHandle {
+  word-break: break-word;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@mixin button {
+  display: block;
+  min-height: 40px;
+  padding: 12px 12px 13px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: Arial, Helvetica, sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
 }
