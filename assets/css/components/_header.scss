@@ -257,6 +257,12 @@
     }
   }
 
+  &__choose-lang {
+    @include small-mobile {
+      display: none;
+    }
+  }
+
   &__choose-lang::before {
     content: none;
   }

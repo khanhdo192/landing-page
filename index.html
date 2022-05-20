@@ -138,7 +138,7 @@
                   </button>
                 </li>
                 <li class="mc-header-secondary-nav__item mc-header-secondary-nav__log-in">
-                  <a href="#" class="mc-header-log-in">
+                  <a href="#" class="mc-header-log-in" id="openModal">
                     <span class="mc-header-log-in__text">Login</span>
                     <span class="mc-header-log-in__avatar">
                       <i class="mc-header-log-in__user-icon fa-regular fa-circle-user"></i>
@@ -157,6 +157,7 @@
         </div>
       </header>
       <!-- End header -->
+
       <!-- Start mobile menu -->
       <div class="mc-mobile-menu">
         <header class="mc-mobile-menu__header">
@@ -193,6 +194,7 @@
         </nav>
       </div>
       <!-- End mobile menu -->
+
       <!-- Start main content -->
       <main class="mc-main-content">
         <div class="container">
@@ -430,7 +432,7 @@
                 </ul>
               </div>
               <aside class="col-12 col-lg-4">
-                <div class="home-section__aside">
+                <div class="home-section__aside row">
                   <div class="col-12 col-lg-12 col-md-6">
                     <section class="mc-fixture">
                       <div class="mc-fixture__header">
@@ -467,21 +469,190 @@
                         </div>
                       </div>
                       <div class="mc-fixture__footer">
-                        <a class="mc-button--secondary" href="#">Preview</a>
-                        <a class="mc-button--yellow" href="#">Buy Tickets</a>
+                        <a class="mc-button mc-button--secondary" href="#">
+                          <span class="mc-button__notchange">Preview</span>
+                        </a>
+                        <a class="mc-button mc-button--yellow" href="#">
+                          <span class="mc-button__text">Buy Tickets</span>
+                        </a>
                       </div>
                     </section>
                   </div>
-                  <div class="col-12 col-lg-12 col-md-6"></div>
+                  <div class="col-12 col-lg-12 col-md-6">
+                    <section class="mc-result">
+                      <div class="mc-result__header">
+                        <h3 class="mc-result__header__heading">Last Result</h3>
+                        <a class="mc-result__header__link" href="#">
+                          <span class="mc-result__header__text">All results</span>
+                          <i class="mc-result__header__icon fa-solid fa-arrow-right-long"></i>
+                        </a>
+                      </div>
+                      <div class="mc-result__info">
+                        <time class="mc-result__info__date">Sun 15 May</time>
+                        <p class="mc-result__info__league">Premier League</p>
+                      </div>
+                      <div class="mc-result__match">
+                        <div class="mc-result__match__first-team">
+                          <p class="mc-result__match__team">Man City</p>
+                        </div>
+                        <div class="mc-result__match__table">
+                          <span class="mc-result__match__score">2</span>
+                          <span class="mc-result__match__score">2</span>
+                        </div>
+                        <div class="mc-result__match__first-team">
+                          <p class="mc-result__match__team">A Villa</p>
+                        </div>
+                      </div>
+                      <div class="mc-result__footer">
+                        <a class="mc-button mc-button--secondary-result" href="#">
+                          <span class="mc-button__notchange">Match report</span>
+                        </a>
+                      </div>
+                    </section>
+                  </div>
                 </div>
               </aside>
+              <div class="col-12">
+                <div class="home-section__footer">
+                  <div class="home-section__footer--explore">
+                    <a class="mc-button mc-button--explore" href="#">
+                      <span class="home-section__footer--explore-text">More News</span>
+                      <i
+                        class="home-section__footer--explore-icon fa-solid fa-arrow-right-long"
+                      ></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
         </div>
       </main>
       <!-- End main content -->
+
+      <!-- Start modal -->
+      <div class="mc-modal-login" id="formModal">
+        <div class="mc-modal-login__content">
+          <button class="mc-modal-login__close" id="closeModal">
+            <i class="mc-modal-login__close__icon fa-solid fa-xmark"></i>
+          </button>
+          <h2 class="mc-modal-login__title">Sign in</h2>
+          <form class="mc-modal-login__form" action="">
+            <div class="mc-form__group">
+              <label for="">Email</label>
+              <input class="mc-form__input form-control" type="text" name="email" required />
+            </div>
+            <div class="mc-form__group">
+              <label for="">Password</label>
+              <input class="mc-form__input form-control" type="password" name="password" required />
+            </div>
+            <a class="mc-form__link" href="#">Forgot your password?</a>
+            <button class="mc-form__button" type="submit">Sign in</button>
+            <a class="mc-form__link text-center" href="#"
+              >Don't have an account? Register now, it's free!</a
+            >
+          </form>
+        </div>
+      </div>
+      <!-- End modal -->
+
       <!-- Start footer -->
-      <footer></footer>
+      <footer class="mc-footer">
+        <div class="mc-footer__main">
+          <div class="mc-footer__social">
+            <img class="mc-footer__logo" src="./assets/images/crest.svg" alt="" />
+            <h3 class="mc-footer__title">Manchester City FC Official Website</h3>
+            <p class="mc-footer__description">
+              Get all the latest news and videos, injury updates, fixture information, ticket
+              information, player information and much more.
+            </p>
+            <ul class="mc-footer__social__list">
+              <li class="mc-footer__social__item">
+                <a class="mc-footer__social__link"
+                  ><i class="mc-footer__social__icon fa-brands fa-youtube"></i
+                ></a>
+              </li>
+              <li class="mc-footer__social__item">
+                <a class="mc-footer__social__link"
+                  ><i class="mc-footer__social__icon fa-brands fa-instagram"></i
+                ></a>
+              </li>
+              <li class="mc-footer__social__item">
+                <a class="mc-footer__social__link"
+                  ><i class="mc-footer__social__icon fa-brands fa-twitter"></i
+                ></a>
+              </li>
+              <li class="mc-footer__social__item">
+                <a class="mc-footer__social__link"
+                  ><i class="mc-footer__social__icon fa-brands fa-facebook-f"></i
+                ></a>
+              </li>
+              <li class="mc-footer__social__item">
+                <a class="mc-footer__social__link"
+                  ><i class="mc-footer__social__icon fa-brands fa-linkedin-in"></i
+                ></a>
+              </li>
+            </ul>
+          </div>
+          <div class="mc-footer__policy">
+            <h3 class="mc-footer__policy__title">Our Policy</h3>
+            <ul class="mc-footer__policy__list">
+              <li class="mc-footer__policy__item">
+                <a class="mc-footer__policy__link" href="#">
+                  <span class="mc-footer__policy__text">Accessibility</span>
+                </a>
+              </li>
+              <li class="mc-footer__policy__item">
+                <a class="mc-footer__policy__link" href="#">
+                  <span class="mc-footer__policy__text">Fair Processing Notice</span>
+                </a>
+              </li>
+              <li class="mc-footer__policy__item">
+                <a class="mc-footer__policy__link" href="#">
+                  <span class="mc-footer__policy__text">Cookie Policy</span>
+                </a>
+              </li>
+              <li class="mc-footer__policy__item">
+                <a class="mc-footer__policy__link" href="#">
+                  <span class="mc-footer__policy__text">Privacy Policy</span>
+                </a>
+              </li>
+              <li class="mc-footer__policy__item">
+                <a class="mc-footer__policy__link" href="#">
+                  <span class="mc-footer__policy__text">Terms of Use</span>
+                </a>
+              </li>
+              <li class="mc-footer__policy__item">
+                <a class="mc-footer__policy__link" href="#">
+                  <span class="mc-footer__policy__text">Contact Us</span>
+                </a>
+              </li>
+              <li class="mc-footer__policy__item">
+                <a class="mc-footer__policy__link" href="#">
+                  <span class="mc-footer__policy__text">Sitemap</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="mc-footer__support">
+            <h3 class="mc-footer__support__title">Supporter Services</h3>
+            <ul class="mc-footer__support__list">
+              <li class="mc-footer__support__item">
+                <span class="mc-footer__support__text">Phone: +44 (0) 161 444 1894</span>
+              </li>
+              <li class="mc-footer__support__item">
+                <span class="mc-footer__support__text">Mail: mancity@city.com</span>
+              </li>
+              <li class="mc-footer__support__item">
+                <span class="mc-footer__support__text">Manchester City FC Ltd 2022</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="mc-footer__copyright">
+          <span class="mc-footer__copyright__text">All rights reserved by ©mancity 2022</span>
+        </div>
+      </footer>
       <!-- End footer -->
     </div>
 
