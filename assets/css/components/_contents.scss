@@ -20,9 +20,37 @@
     }
   }
 
+  &__content > aside {
+    @include tablet-md {
+      order: 2;
+      + div {
+        order: 1;
+      }
+    }
+  }
+
   &__aside {
     display: flex;
-    flex-direction: column;
+  }
+
+  &__footer {
+    margin: 32px 0;
+    &--explore {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        background-color: $nav-text-color;
+        left: 0;
+        right: 0;
+        top: calc(50% - 1px);
+      }
+    }
   }
 }
 
@@ -150,6 +178,15 @@
 .news-card {
   width: 100%;
 
+  &:hover {
+    .news-card__heading {
+      text-decoration: underline;
+    }
+    .news-card__wrapper {
+      transform: scale(1.1);
+    }
+  }
+
   @include small-mobile {
     padding-bottom: 10px;
     border-bottom: 1px solid #dedede;
@@ -191,6 +228,7 @@
     height: 100%;
     object-fit: cover;
     object-position: top;
+    transition: transform 0.2s;
   }
 
   &__title {
@@ -227,6 +265,7 @@
   width: 100%;
   border: 1px solid #dedede;
   padding: 21px 17px 17px;
+  margin-bottom: 20px;
 
   &__header {
     display: flex;
@@ -253,6 +292,9 @@
 
     &__text {
       text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
     }
 
     &__icon {
@@ -296,6 +338,11 @@
     &__team {
       font-size: 16px;
       font-weight: 700;
+      text-align: center;
+      @include small-mobile {
+        font-size: 14px;
+        margin-top: 5px;
+      }
     }
 
     &__time {
@@ -321,24 +368,173 @@
   }
 
   &__footer {
-    margin-top: 25px;
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+}
 
-    .mc-button--secondary {
-      @include button;
-      color: $nav-text-color;
-      background-color: #fff;
-      border: 1px solid $nav-text-color;
-      margin-right: 8px;
+.mc-result {
+  width: 100%;
+  border: 1px solid #dedede;
+  padding: 21px 17px 17px;
+  margin-bottom: 20px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &__heading {
+      width: 50%;
+      color: $text-color;
+      font-size: 13px;
+      text-transform: uppercase;
+      font-family: Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      margin: 0;
     }
 
-    .mc-button--yellow {
-      @include button;
+    &__link {
+      font-size: 13px;
+      display: flex;
+      align-items: center;
       color: $nav-text-color;
-      background-color: #f4bc46;
-      border: 1px solid #f4bc46;
+      font-weight: 700;
+    }
+
+    &__text {
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+
+    &__icon {
+      padding-left: 5px;
+    }
+  }
+
+  &__info {
+    text-align: center;
+    margin-top: 15px;
+
+    &__date {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    &__league {
+      margin-top: 3px;
+      font-size: 13px;
+    }
+  }
+
+  &__match {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+
+    &__first-team {
+      flex: 1 0;
+    }
+
+    &__team {
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+      margin: 0;
+
+      @include small-mobile {
+        font-size: 14px;
+        margin-top: 5px;
+      }
+    }
+
+    &__table {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__score {
+      font-family: Gotham, sans-serif;
+      font-weight: 700;
+      color: #fff;
+      background-color: $text-color;
+      font-size: 24px;
+      min-width: 36px;
+      margin: 2px 1px;
+      text-align: center;
+    }
+  }
+
+  &__footer {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include tablet-md {
+      margin-top: 64px;
+    }
+  }
+}
+
+.mc-button {
+  @include button;
+
+  &--secondary {
+    width: 100%;
+    color: $nav-text-color;
+    background-color: #fff;
+    border: 1px solid $nav-text-color;
+    margin-right: 8px;
+    &:hover {
+      background-color: #f2f2f2;
+    }
+  }
+
+  &--yellow {
+    width: 100%;
+    color: $nav-text-color;
+    background-color: #f4bc46;
+    border: 1px solid #f4bc46;
+    &:hover {
+      background-color: #f7cd76;
+    }
+  }
+
+  &--secondary-result {
+    width: 100%;
+    color: $nav-text-color;
+    background-color: #fff;
+    border: 1px solid $nav-text-color;
+    &:hover {
+      background-color: #f2f2f2;
+    }
+  }
+
+  &--explore {
+    min-width: 229px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 11px;
+    color: $nav-text-color;
+    background-color: #fff;
+    border: 1px solid $nav-text-color;
+    &:hover {
+      background-color: #f2f2f2;
+    }
+  }
+
+  &__text {
+    @include smallest-mobile {
+      display: block;
+      transform: translateY(-28%);
     }
   }
 }

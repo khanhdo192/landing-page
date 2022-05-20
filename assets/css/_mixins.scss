@@ -1,3 +1,9 @@
+@mixin smallest-mobile {
+  @media only screen and (max-width: 337px) {
+    @content;
+  }
+}
+
 @mixin small-mobile {
   @media only screen and (max-width: 575.5px) {
     @content;
@@ -12,6 +18,18 @@
 
 @mixin tablet {
   @media only screen and (max-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin tablet-lg {
+  @media only screen and (max-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin tablet-md {
+  @media only screen and (max-width: 991.5px) {
     @content;
   }
 }
@@ -47,5 +65,12 @@
   text-transform: uppercase;
   text-align: center;
   text-decoration: none;
-  width: 100%;
+
+  @include tablet-lg {
+    font-size: 13px;
+  }
+
+  @include smallest-mobile {
+    height: 40px;
+  }
 }

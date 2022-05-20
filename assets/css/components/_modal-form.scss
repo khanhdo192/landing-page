@@ -1,0 +1,116 @@
+.mc-modal-active {
+  display: block !important;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+.mc-modal-login {
+  display: none;
+  position: fixed;
+  z-index: 150;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+
+  &__content {
+    position: relative;
+    background-color: #fff;
+    margin: auto;
+    max-width: 510px;
+    min-height: 300px;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 20px 40px 30px;
+    box-shadow: 2px 4px 9px 0 rgba(0, 40, 94, 0.2);
+    display: flex;
+    flex-direction: column;
+    animation: fadeOut 0.5s;
+  }
+
+  &__close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    &:focus {
+      outline: none;
+    }
+    &__icon {
+      font-size: 20px;
+      color: $nav-text-color;
+      &:hover {
+        color: $bg-color;
+      }
+    }
+  }
+
+  &__title {
+    font-family: Gotham, sans-serif;
+    font-size: 25px;
+    font-weight: 700;
+    color: $nav-text-color;
+    padding: 20px 0;
+  }
+
+  &__form {
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.mc-form {
+  &__group {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    label {
+      min-width: 100px;
+      color: $text-color;
+      font-size: 16px;
+      font-weight: 700;
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+    }
+  }
+  &__input {
+    border: none;
+    border-bottom: 2px solid #dedede;
+    border-radius: 0;
+    &:hover,
+    :focus {
+      border-color: $main-color;
+      outline: none;
+    }
+  }
+  &__link {
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: underline;
+    color: $nav-text-color;
+    padding: 20px 0;
+  }
+
+  &__button {
+    @include button;
+    background-color: $nav-text-color;
+    color: #fff;
+    border: none;
+    transition: background-color 0.1s ease-in-out;
+    &:hover {
+      background-color: #003e91;
+    }
+  }
+}
