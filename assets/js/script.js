@@ -56,3 +56,13 @@ const hideMenu = () => {
 
 window.addEventListener('resize', hideMenu);
 window.addEventListener('load', hideMenu);
+
+const swiper = new Swiper('.swiper', {
+  loop: true,
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: false,
+    // pauseOnMouseEnter: true,
+  },
+  effect: 'fade',
+});
