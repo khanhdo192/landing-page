@@ -29,3 +29,9 @@ a:hover {
 img {
   max-width: 100%;
 }
+
+@include mobile {
+  .swiper {
+    overflow: visible !important;
+  }
+}
