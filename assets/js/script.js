@@ -1,9 +1,14 @@
 var open = document.querySelector('#mcOpenMenu');
 var close = document.querySelector('#mcCloseMenu');
 var mobileMenu = document.querySelector('.mc-mobile-menu');
+
 var openModal = document.querySelector('#openModal');
 var closeModal = document.querySelector('#closeModal');
 var formModal = document.querySelector('#formModal');
+
+var openRosterModal = document.querySelector('#openRosterModal');
+var closeRosterModal = document.querySelector('#closeRosterModal');
+var rosterModal = document.querySelector('#rosterModal');
 
 open.addEventListener('click', () => {
   mobileMenu.style.transform = 'translateX(0)';
@@ -16,14 +21,23 @@ close.addEventListener('click', () => {
 openModal.addEventListener('click', () => {
   formModal.classList.add('mc-modal-active');
 });
+openRosterModal.addEventListener('click', () => {
+  rosterModal.classList.add('mc-modal-active');
+});
 
 closeModal.addEventListener('click', () => {
   formModal.classList.remove('mc-modal-active');
+});
+closeRosterModal.addEventListener('click', () => {
+  rosterModal.classList.remove('mc-modal-active');
 });
 
 window.addEventListener('click', (e) => {
   if (e.target == formModal) {
     formModal.classList.remove('mc-modal-active');
+  }
+  if (e.target == rosterModal) {
+    rosterModal.classList.remove('mc-modal-active');
   }
 });
 
