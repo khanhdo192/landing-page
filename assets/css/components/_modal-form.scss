@@ -10,7 +10,8 @@
     opacity: 1;
   }
 }
-.mc-modal-login {
+.mc-modal-login,
+.mc-modal-register {
   display: none;
   position: fixed;
   z-index: 150;
@@ -76,6 +77,7 @@
     display: flex;
     align-items: center;
     padding-bottom: 20px;
+    flex-wrap: wrap;
     label {
       min-width: 100px;
       color: $text-color;
@@ -91,10 +93,18 @@
     border-radius: 0;
     &:hover,
     :focus {
-      border-color: $main-color;
       outline: none;
     }
   }
+
+  &__message {
+    padding-top: 10px;
+    flex-basis: 100%;
+    color: #ff2929;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+  }
+
   &__link {
     font-size: 14px;
     font-family: Arial, Helvetica, sans-serif;

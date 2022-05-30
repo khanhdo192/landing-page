@@ -35,7 +35,7 @@ const renderRoster = (rosters) => {
   const htmlSubList = subList.map((sub) => {
     return sub.name;
   });
-  rosterSub.innerHTML = htmlSubList.join(', ');
+  rosterSub.innerText = htmlSubList.join(', ');
 };
 
 runApi();
