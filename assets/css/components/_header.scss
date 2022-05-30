@@ -24,10 +24,13 @@
   &__container {
     display: flex;
     align-items: center;
-    max-width: 64rem;
+    max-width: 72rem;
     width: 100%;
     padding: 0 1.5rem;
 
+    @include tablet-lg {
+      max-width: 61rem;
+    }
     @include tablet {
       flex-direction: column;
       padding-top: 16px;
@@ -267,12 +270,64 @@
     content: none;
   }
 
+  &__login {
+    position: relative;
+  }
+
   &__mobile-nav {
     display: none;
 
     @include mobile {
       display: block;
     }
+  }
+  &__drop-down {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 100%;
+    left: calc(50% - 65px);
+    width: 120px;
+    box-shadow: 0 8px 20px 0 rgba(2, 40, 94, 0.3);
+    border: 1px solid $nav-text-color;
+    background: #fff;
+    cursor: auto;
+    z-index: 1;
+    padding: 0 0;
+    transition: opacity 0.3s linear;
+  }
+
+  &__sub-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__sub-item {
+    display: flex;
+    min-height: 47px;
+    &:hover {
+      background: $bg-color;
+    }
+  }
+
+  &__sub-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: $nav-text-color;
+  }
+}
+
+.showSecondNav {
+  &:hover .mc-header-secondary-nav__drop-down {
+    opacity: 1;
+    visibility: visible;
   }
 }
 

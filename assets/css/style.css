@@ -31,10 +31,20 @@ img {
   max-width: 100%;
 }
 
-@media only screen and (max-width: 768px) {
-  .swiper {
-    overflow: visible !important;
+@media only screen and (max-width: 575.5px) {
+  .change-padding {
+    padding: 0;
   }
+}
+
+.form-control:focus {
+  border-color: #98c5e9;
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+}
+
+.invalid .mc-form__input {
+  border-bottom-color: #ff2929;
 }
 
 .mc-header {
@@ -82,9 +92,15 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 64rem;
+  max-width: 72rem;
   width: 100%;
   padding: 0 1.5rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .mc-header__container {
+    max-width: 61rem;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -417,6 +433,10 @@ img {
   content: none;
 }
 
+.mc-header-secondary-nav__login {
+  position: relative;
+}
+
 .mc-header-secondary-nav__mobile-nav {
   display: none;
 }
@@ -425,6 +445,69 @@ img {
   .mc-header-secondary-nav__mobile-nav {
     display: block;
   }
+}
+
+.mc-header-secondary-nav__drop-down {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 100%;
+  left: calc(50% - 65px);
+  width: 120px;
+  -webkit-box-shadow: 0 8px 20px 0 rgba(2, 40, 94, 0.3);
+          box-shadow: 0 8px 20px 0 rgba(2, 40, 94, 0.3);
+  border: 1px solid #00285e;
+  background: #fff;
+  cursor: auto;
+  z-index: 1;
+  padding: 0 0;
+  -webkit-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+}
+
+.mc-header-secondary-nav__sub-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.mc-header-secondary-nav__sub-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 47px;
+}
+
+.mc-header-secondary-nav__sub-item:hover {
+  background: #72e9ff;
+}
+
+.mc-header-secondary-nav__sub-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #00285e;
+}
+
+.showSecondNav:hover .mc-header-secondary-nav__drop-down {
+  opacity: 1;
+  visibility: visible;
 }
 
 .mc-header-locate-selector {
@@ -732,12 +815,6 @@ img {
 .super-banner {
   margin-top: 0;
   background-color: #00285e;
-}
-
-@media only screen and (max-width: 768px) {
-  .super-banner {
-    margin: 0 -1rem;
-  }
 }
 
 .super-banner:hover .super-banner__heading {
@@ -1410,7 +1487,8 @@ img {
   }
 }
 
-.mc-modal-login {
+.mc-modal-login,
+.mc-modal-register {
   display: none;
   position: fixed;
   z-index: 150;
@@ -1421,7 +1499,8 @@ img {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-.mc-modal-login__content {
+.mc-modal-login__content,
+.mc-modal-register__content {
   position: relative;
   background-color: #fff;
   margin: auto;
@@ -1444,7 +1523,8 @@ img {
           animation: fadeOut 0.5s;
 }
 
-.mc-modal-login__close {
+.mc-modal-login__close,
+.mc-modal-register__close {
   position: absolute;
   top: 0;
   right: 0;
@@ -1455,20 +1535,24 @@ img {
   cursor: pointer;
 }
 
-.mc-modal-login__close:focus {
+.mc-modal-login__close:focus,
+.mc-modal-register__close:focus {
   outline: none;
 }
 
-.mc-modal-login__close__icon {
+.mc-modal-login__close__icon,
+.mc-modal-register__close__icon {
   font-size: 20px;
   color: #00285e;
 }
 
-.mc-modal-login__close__icon:hover {
+.mc-modal-login__close__icon:hover,
+.mc-modal-register__close__icon:hover {
   color: #72e9ff;
 }
 
-.mc-modal-login__title {
+.mc-modal-login__title,
+.mc-modal-register__title {
   font-family: Gotham, sans-serif;
   font-size: 25px;
   font-weight: 700;
@@ -1476,7 +1560,8 @@ img {
   padding: 20px 0;
 }
 
-.mc-modal-login__form {
+.mc-modal-login__form,
+.mc-modal-register__form {
   padding: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1495,6 +1580,8 @@ img {
       -ms-flex-align: center;
           align-items: center;
   padding-bottom: 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .mc-form__group label {
@@ -1514,8 +1601,16 @@ img {
 
 .mc-form__input:hover,
 .mc-form__input :focus {
-  border-color: #98c5e9;
   outline: none;
+}
+
+.mc-form__message {
+  padding-top: 10px;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  color: #ff2929;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
 }
 
 .mc-form__link {

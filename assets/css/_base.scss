@@ -30,8 +30,19 @@ img {
   max-width: 100%;
 }
 
-@include mobile {
-  .swiper {
-    overflow: visible !important;
+@include small-mobile {
+  .change-padding {
+    padding: 0;
+  }
+}
+
+.form-control:focus {
+  border-color: $main-color;
+  box-shadow: unset;
+}
+
+.invalid {
+  .mc-form__input {
+    border-bottom-color: #ff2929;
   }
 }

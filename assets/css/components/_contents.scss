@@ -59,10 +59,6 @@
   margin-top: 0;
   background-color: $nav-text-color;
 
-  @include mobile {
-    margin: 0 -1rem;
-  }
-
   // &::before {
   //   content: '';
   //   position: absolute;
