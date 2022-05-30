@@ -1,6 +1,7 @@
+import { apiUrl } from './api.js';
+
 const rosterStart = document.querySelector('.mc-modal-roster__list');
 const rosterSub = document.querySelector('.mc-modal-roster__bench');
-const rosterApi = 'http://localhost:3000/startingRoster';
 
 const runApi = () => {
   getRoster(renderRoster);
@@ -8,7 +9,7 @@ const runApi = () => {
 
 const getRoster = async (callback) => {
   try {
-    const res = await axios.get(rosterApi);
+    const res = await axios.get(apiUrl + 'startingRoster');
     return callback(res.data);
   } catch (error) {
     // console.error(error);

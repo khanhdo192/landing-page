@@ -1,4 +1,5 @@
-const userApi = 'http://localhost:3000/users';
+import { apiUrl } from './api.js';
+
 document.addEventListener('DOMContentLoaded', () => {
   Validator({
     form: '#registerForm',
@@ -19,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ],
     onSubmit: async (data) => {
       //   console.log(data);
-      const getUser = await axios.get(userApi);
+      const getUser = await axios.get(apiUrl + 'users');
       const dataUser = getUser.data;
       const checkUserExist = dataUser.some((item) => {
         return item.email === data.email;
@@ -44,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
     ],
     onSubmit: async (data) => {
       //   console.log(data);
-      const getUser = await axios.get(userApi);
+      const getUser = await axios.get(apiUrl + 'users');
       const dataUser = getUser.data;
       //   console.log(dataUser);
       const checkUser = dataUser.find((item) => {
