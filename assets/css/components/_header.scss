@@ -304,9 +304,8 @@
 
   &__sub-item {
     display: flex;
-    min-height: 47px;
     &:hover {
-      background: $bg-color;
+      background-color: #ededed;
     }
   }
 
@@ -315,8 +314,8 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 10px;
-    font-size: 18px;
+    padding: 5px;
+    font-size: 16px;
     font-weight: 700;
     text-decoration: none;
     text-transform: uppercase;
