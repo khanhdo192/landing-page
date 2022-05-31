@@ -29,7 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const error = document.querySelectorAll('#registerForm .mc-form__message')[1];
         error.innerText = 'Email already exist';
       } else {
-        await axios.post(userApi, data);
+        await axios.post(apiUrl + 'users', data);
+        window.location.reload();
       }
     },
   });
