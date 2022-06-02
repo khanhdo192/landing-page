@@ -566,6 +566,14 @@ img {
   font-size: 25px;
 }
 
+.mc-header-log-in__user-ava {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .mc-header-open-menu {
   background: transparent;
   border: none;
@@ -1487,7 +1495,8 @@ img {
 }
 
 .mc-modal-login,
-.mc-modal-register {
+.mc-modal-register,
+.mc-modal-profile {
   display: none;
   position: fixed;
   z-index: 150;
@@ -1499,7 +1508,8 @@ img {
 }
 
 .mc-modal-login__content,
-.mc-modal-register__content {
+.mc-modal-register__content,
+.mc-modal-profile__content {
   position: relative;
   background-color: #fff;
   margin: auto;
@@ -1523,7 +1533,8 @@ img {
 }
 
 .mc-modal-login__close,
-.mc-modal-register__close {
+.mc-modal-register__close,
+.mc-modal-profile__close {
   position: absolute;
   top: 0;
   right: 0;
@@ -1535,23 +1546,27 @@ img {
 }
 
 .mc-modal-login__close:focus,
-.mc-modal-register__close:focus {
+.mc-modal-register__close:focus,
+.mc-modal-profile__close:focus {
   outline: none;
 }
 
 .mc-modal-login__close__icon,
-.mc-modal-register__close__icon {
+.mc-modal-register__close__icon,
+.mc-modal-profile__close__icon {
   font-size: 20px;
   color: #00285e;
 }
 
 .mc-modal-login__close__icon:hover,
-.mc-modal-register__close__icon:hover {
+.mc-modal-register__close__icon:hover,
+.mc-modal-profile__close__icon:hover {
   color: #72e9ff;
 }
 
 .mc-modal-login__title,
-.mc-modal-register__title {
+.mc-modal-register__title,
+.mc-modal-profile__title {
   font-family: Gotham, sans-serif;
   font-size: 25px;
   font-weight: 700;
@@ -1560,7 +1575,8 @@ img {
 }
 
 .mc-modal-login__form,
-.mc-modal-register__form {
+.mc-modal-register__form,
+.mc-modal-profile__form {
   padding: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1652,6 +1668,24 @@ img {
 
 .mc-form__button:hover {
   background-color: #003e91;
+}
+
+.mc-form__group-upload {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.mc-form__group-upload label[for='inputUploadImg'] {
+  cursor: pointer;
+}
+
+.mc-form__preview-img {
+  width: 150px;
+  height: 150px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
 }
 
 .mc-footer {
