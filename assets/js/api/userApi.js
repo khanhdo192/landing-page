@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // Validator.isRequired('#pwNew'),
     ],
     onSubmit: async (data) => {
-      console.log(data);
+      // console.log(data);
       const updateData = {
         name: data.name,
         password: data.passwordNew || data.passwordOld,
@@ -90,10 +90,10 @@ document.addEventListener('DOMContentLoaded', () => {
       delete updateData.passwordOld;
       delete updateData.passwordNew;
       delete updateData.passwordCheck;
-      console.log(updateData);
-      // await axios.put(apiUrl + 'users/' + data.id, updateData);
-      // localStorage.setItem('userInfo', JSON.stringify(updateData));
-      // window.location.reload();
+      // console.log(updateData);
+      await axios.put(apiUrl + 'users/' + data.id, updateData);
+      localStorage.setItem('userInfo', JSON.stringify(updateData));
+      window.location.reload();
     },
   });
 });
