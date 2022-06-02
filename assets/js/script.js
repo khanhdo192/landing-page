@@ -134,7 +134,7 @@ const hideMenu = () => {
 
 const showAvatar = () => {
   const ava = document.querySelector('.mc-header-log-in__avatar');
-  ava.innerHTML = !getUser.profileImg
+  ava.innerHTML = !getUser?.profileImg
     ? '<i class="mc-header-log-in__user-icon fa-regular fa-circle-user"></i>'
     : `<img src='${getUser.profileImg}' class='mc-header-log-in__user-ava' alt='avatar'/>`;
 };
