@@ -62,173 +62,38 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
   });
+
+  Validator({
+    form: '#profileForm',
+    formGroupSelector: '.mc-form__group',
+    errorSelector: '.mc-form__message',
+    rules: [
+      Validator.isRequired('#nameAuth', 'Please type your fullname'),
+      Validator.isRequired('#pwAuth'),
+      Validator.isConfirmed(
+        '#pwAuth',
+        () => {
+          return document.querySelector('#profileForm #pwCheck').value;
+        },
+        'Wrong password'
+      ),
+      // Validator.minLength('#pwNew', 6),
+      // Validator.isRequired('#pwNew'),
+    ],
+    onSubmit: async (data) => {
+      // console.log(data);
+      const updateData = {
+        name: data.name,
+        password: data.passwordNew || data.password,
+        ...data,
+      };
+      delete updateData.passwordOld;
+      delete updateData.passwordNew;
+      delete updateData.passwordCheck;
+      // console.log(updateData);
+      await axios.put(apiUrl + 'users/' + data.id, updateData);
+      localStorage.setItem('userInfo', JSON.stringify(updateData));
+      window.location.reload();
+    },
+  });
 });
-
-function Validator(options) {
-  function getParent(element, selector) {
-    while (element.parentElement) {
-      if (element.parentElement.matches(selector)) {
-        return element.parentElement;
-      }
-      element = element.parentElement;
-    }
-  }
-
-  var selectorRules = {};
-
-  // validate
-  function validate(inputElement, rule) {
-    var errorElement = getParent(inputElement, options.formGroupSelector).querySelector(
-      options.errorSelector
-    );
-    var errorMessage;
-
-    // get rules of selector
-    var rules = selectorRules[rule.selector];
-
-    // loop each rule and check
-    for (var i = 0; i < rules.length; ++i) {
-      switch (inputElement.type) {
-        case 'radio':
-        case 'checkbox':
-          errorMessage = rules[i](formElement.querySelector(rule.selector + ':checked'));
-          break;
-        default:
-          errorMessage = rules[i](inputElement.value);
-      }
-      if (errorMessage) break;
-    }
-
-    if (errorMessage) {
-      errorElement.innerText = errorMessage;
-      getParent(inputElement, options.formGroupSelector).classList.add('invalid');
-    } else {
-      errorElement.innerText = '';
-      getParent(inputElement, options.formGroupSelector).classList.remove('invalid');
-    }
-
-    return !errorMessage;
-  }
-
-  // get element of form need validate
-  var formElement = document.querySelector(options.form);
-  if (formElement) {
-    formElement.onsubmit = function (e) {
-      e.preventDefault();
-
-      var isFormValid = true;
-
-      // loop each rules and validate
-      options.rules.forEach(function (rule) {
-        var inputElement = formElement.querySelector(rule.selector);
-        var isValid = validate(inputElement, rule);
-        if (!isValid) {
-          isFormValid = false;
-        }
-      });
-
-      if (isFormValid) {
-        // submit with javascript
-        if (typeof options.onSubmit === 'function') {
-          var enableInputs = formElement.querySelectorAll('[name]');
-          var formValues = Array.from(enableInputs).reduce(function (values, input) {
-            switch (input.type) {
-              case 'radio':
-                values[input.name] = formElement.querySelector(
-                  'input[name="' + input.name + '"]:checked'
-                ).value;
-                break;
-              case 'checkbox':
-                if (!input.matches(':checked')) {
-                  values[input.name] = '';
-                  return values;
-                }
-                if (!Array.isArray(values[input.name])) {
-                  values[input.name] = [];
-                }
-                values[input.name].push(input.value);
-                break;
-              case 'file':
-                values[input.name] = input.files;
-                break;
-              default:
-                values[input.name] = input.value;
-            }
-
-            return values;
-          }, {});
-          options.onSubmit(formValues);
-        }
-        // submit default
-        else {
-          formElement.submit();
-        }
-      }
-    };
-
-    // loop each rule and handle events
-    options.rules.forEach(function (rule) {
-      // save rules of input
-      if (Array.isArray(selectorRules[rule.selector])) {
-        selectorRules[rule.selector].push(rule.test);
-      } else {
-        selectorRules[rule.selector] = [rule.test];
-      }
-
-      var inputElements = formElement.querySelectorAll(rule.selector);
-
-      Array.from(inputElements).forEach(function (inputElement) {
-        // onblur
-        inputElement.onblur = function () {
-          validate(inputElement, rule);
-        };
-
-        // oninput
-        inputElement.oninput = function () {
-          var errorElement = getParent(inputElement, options.formGroupSelector).querySelector(
-            options.errorSelector
-          );
-          errorElement.innerText = '';
-          getParent(inputElement, options.formGroupSelector).classList.remove('invalid');
-        };
-      });
-    });
-  }
-}
-
-Validator.isRequired = function (selector, message) {
-  return {
-    selector: selector,
-    test: function (value) {
-      return value ? undefined : message || 'Please type this field';
-    },
-  };
-};
-
-Validator.isEmail = function (selector, message) {
-  return {
-    selector: selector,
-    test: function (value) {
-      var regex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-      return regex.test(value) ? undefined : message || 'Email not valid';
-    },
-  };
-};
-
-Validator.minLength = function (selector, min, message) {
-  return {
-    selector: selector,
-    test: function (value) {
-      return value.length >= min ? undefined : message || `Please type minimum ${min} character`;
-    },
-  };
-};
-
-Validator.isConfirmed = function (selector, getConfirmValue, message) {
-  return {
-    selector: selector,
-    test: function (value) {
-      return value === getConfirmValue() ? undefined : message || 'Value incorrect';
-    },
-  };
-};

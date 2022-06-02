@@ -11,7 +11,8 @@
   }
 }
 .mc-modal-login,
-.mc-modal-register {
+.mc-modal-register,
+.mc-modal-profile {
   display: none;
   position: fixed;
   z-index: 150;
@@ -122,5 +123,18 @@
     &:hover {
       background-color: #003e91;
     }
+  }
+  &__group-upload {
+    justify-content: center;
+
+    label[for='inputUploadImg'] {
+      cursor: pointer;
+    }
+  }
+  &__preview-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
   }
 }

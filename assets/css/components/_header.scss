@@ -375,6 +375,13 @@
   &__user-icon {
     font-size: 25px;
   }
+
+  &__user-ava {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
 }
 
 .mc-header-open-menu {

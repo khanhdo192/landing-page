@@ -151,14 +151,16 @@
                   <div class="mc-header-secondary-nav__log-in">
                     <a href="javascript:void(0)" class="mc-header-log-in" id="openLoginModal">
                       <span class="mc-header-log-in__text" id="userNameNav">Login</span>
-                      <span class="mc-header-log-in__avatar">
-                        <i class="mc-header-log-in__user-icon fa-regular fa-circle-user"></i>
-                      </span>
+                      <span class="mc-header-log-in__avatar"> </span>
                     </a>
                     <div class="mc-header-secondary-nav__drop-down">
                       <ul class="mc-header-secondary-nav__sub-list">
                         <li class="mc-header-secondary-nav__sub-item">
-                          <a href="javascript:void(0)" class="mc-header-secondary-nav__sub-link">
+                          <a
+                            href="javascript:void(0)"
+                            class="mc-header-secondary-nav__sub-link"
+                            id="openProfileModal"
+                          >
                             <span class="mc-header-secondary-nav__sub-text">Profile</span>
                           </a>
                         </li>
@@ -695,6 +697,75 @@
         </div>
       </div>
 
+      <div class="mc-modal-profile" id="profileModal">
+        <div class="mc-modal-login__content">
+          <button class="mc-modal-login__close" id="closeProfileModal">
+            <i class="mc-modal-login__close__icon fa-solid fa-xmark"></i>
+          </button>
+          <h2 class="mc-modal-login__title">Profile</h2>
+          <form class="mc-modal-login__form" action="" id="profileForm">
+            <div class="mc-form__group mc-form__group-upload">
+              <label for="inputUploadImg">
+                <img
+                  class="mc-form__preview-img"
+                  id="preImg"
+                  src="./assets/images/default-ava.png"
+                  alt="Avatar"
+                  draggable="false"
+                />
+              </label>
+              <input
+                class="mc-form__input form-control"
+                id="inputUploadImg"
+                type="file"
+                name="profileImg"
+                accept="image/*"
+                hidden
+              />
+            </div>
+            <input type="text" id="userId" name="id" hidden />
+            <div class="mc-form__group">
+              <label for="">Fullname</label>
+              <input class="mc-form__input form-control" id="nameAuth" type="text" name="name" />
+              <span class="mc-form__message"></span>
+            </div>
+            <div class="mc-form__group">
+              <label for="">Email</label>
+              <input
+                class="mc-form__input form-control"
+                id="emailAuth"
+                type="email"
+                name="email"
+                disabled
+              />
+              <span class="mc-form__message"></span>
+            </div>
+            <input type="text" id="pwCheck" name="passwordCheck" hidden />
+            <div class="mc-form__group">
+              <label for="">Password</label>
+              <input
+                class="mc-form__input form-control"
+                id="pwAuth"
+                type="password"
+                name="passwordOld"
+              />
+              <span class="mc-form__message"></span>
+            </div>
+            <div class="mc-form__group">
+              <label for="">New password</label>
+              <input
+                class="mc-form__input form-control"
+                id="pwNew"
+                type="password"
+                name="passwordNew"
+              />
+              <span class="mc-form__message"></span>
+            </div>
+            <button class="mc-form__button" id="btnUpdateProfile" type="submit">Update</button>
+          </form>
+        </div>
+      </div>
+
       <div class="mc-modal-roster" id="rosterModal">
         <div class="mc-modal-roster__bg">
           <div class="mc-modal-roster__content">
@@ -841,5 +912,7 @@
     <script src="./assets/js/script.js"></script>
     <script type="module" src="./assets/js/api/userApi.js"></script>
     <script type="module" src="./assets/js/api/rosterApi.js"></script>
+    <script src="./assets/js/handleUpload.js"></script>
+    <script src="./assets/js/handleValidate.js"></script>
   </body>
 </html>
