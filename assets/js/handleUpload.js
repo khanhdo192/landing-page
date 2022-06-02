@@ -19,13 +19,13 @@ const handlePreview = () => {
 
 const getUserData = () => {
   const data = JSON.parse(localStorage.getItem('userInfo'));
-  document.querySelector('#nameAuth').value = data.name;
-  document.querySelector('#emailAuth').value = data.email;
-  document.querySelector('#pwCheck').value = data.password;
-  document.querySelector('#userId').value = data.id;
-  document.querySelector('#preImg').src = !data.profileImg
+  document.querySelector('#nameAuth').value = data?.name;
+  document.querySelector('#emailAuth').value = data?.email;
+  document.querySelector('#pwCheck').value = data?.password;
+  document.querySelector('#userId').value = data?.id;
+  document.querySelector('#preImg').src = !data?.profileImg
     ? './assets/images/default-ava.png'
-    : data.profileImg;
+    : data?.profileImg;
 
   // console.log(data);
 };
